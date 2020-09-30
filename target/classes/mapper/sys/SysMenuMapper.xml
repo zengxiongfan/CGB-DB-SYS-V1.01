@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cy.pj.sys.dao.SysMenuDao">
+  
+   <select id="findPermissions"
+           resultType="string">
+          select permission
+          from sys_menus
+          where id in
+          <foreach collection="menuIds"
+                   open="("
+                   close=")"
+                   separator=","
+                   item="menuId">
+                #{menuId}
+          </foreach>
+   </select>
+  
+   <!-- 查询当前菜单以及上级菜单的菜单名,将其映射到map对象
+        注意:一行记录映射为一个map对象 -->
+   <select id="findObjects" resultType="map">
+        select c.*,p.name parentName
+        from sys_menus c left join sys_menus p
+        on c.parentId=p.id
+   </select> 
+   
+   <update id="updateObject"
+           parameterType="com.cy.pj.sys.entity.SysMenu">
+          update sys_menus
+         set
+           name=#{name},
+           type=#{type},
+           sort=#{sort},
+           url=#{url},
+           parentId=#{parentId},
+           permission=#{permission},
+           modifiedUser=#{modifiedUser},
+           modifiedTime=now()
+        where id=#{id}
+           
+   </update>
+     
+   <insert id="insertObject"
+            parameterType="com.cy.pj.sys.entity.SysMenu">
+          insert into sys_menus
+          (name,url,type,sort,note,parentId,permission,
+            createdTime,modifiedTime,createdUser,modifiedUser)
+          values
+          (#{name},#{url},#{type},#{sort},#{note},#{parentId},#{permission},
+          now(),now(),#{createdUser},#{modifiedUser})
+  </insert>
+     
+</mapper>
+
+
+
+

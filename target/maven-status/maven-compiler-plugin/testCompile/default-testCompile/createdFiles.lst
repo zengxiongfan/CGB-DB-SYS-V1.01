@@ -1,0 +1,5 @@
+com\cy\test\aop\AopTests.class
+com\cy\test\menu\SysMenuDaoTests.class
+com\cy\test\log\SysLogDaoTests.class
+com\cy\ApplicationTests.class
+com\cy\test\log\SysLogServiceTests.class

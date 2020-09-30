@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="CGB-DB-SYS-V1.01:Web exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/CGB_DB_SYS_V1_01_Web_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="CGB-DB-SYS-V1.01/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="CGB-DB-SYS-V1.01" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

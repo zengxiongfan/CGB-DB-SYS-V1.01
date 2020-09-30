@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Created-By: IntelliJ IDEA
+Built-By: Simon
+Build-Jdk: 1.8.0_45
+Implementation-Title: CGB-DB-SYS-V1.01
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.cy
+Main-Class: ${start-class}
+

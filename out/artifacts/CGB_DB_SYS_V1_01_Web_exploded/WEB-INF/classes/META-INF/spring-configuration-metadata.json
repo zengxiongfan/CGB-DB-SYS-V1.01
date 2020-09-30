@@ -1,0 +1,11 @@
+{
+  "groups": [
+    {
+      "name": "async-thread-pool",
+      "type": "com.cy.pj.common.config.SpringAsyncConfig",
+      "sourceType": "com.cy.pj.common.config.SpringAsyncConfig"
+    }
+  ],
+  "properties": [],
+  "hints": []
+}
